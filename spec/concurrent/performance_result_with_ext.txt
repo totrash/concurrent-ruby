@@ -1,0 +1,103 @@
+Run options: exclude {:stress=>true}
+
+Randomized with seed 14862
+
+Map|Performance
+  Without conncurent env
+-------------------
+WRITING
+-------------------
+Warming up --------------------------------------
+                Hash     1.000  i/100ms
+                 Map     1.000  i/100ms
+Calculating -------------------------------------
+                Hash      3.271  (± 0.0%) i/s -     16.000  in   5.073240s
+                 Map      1.556  (± 0.0%) i/s -      8.000  in   5.326138s
+
+Comparison:
+                Hash:        3.3 i/s
+                 Map:        1.6 i/s - 2.10x  (± 0.00) slower
+
+    should be faster
+-------------------
+WRITING/READING/DELETING
+-------------------
+Warming up --------------------------------------
+                Hash     1.000  i/100ms
+                 Map     1.000  i/100ms
+Calculating -------------------------------------
+                Hash      1.499  (± 0.0%) i/s -      8.000  in   5.375547s
+                 Map      0.841  (± 0.0%) i/s -      5.000  in   5.948239s
+
+Comparison:
+                Hash:        1.5 i/s
+                 Map:        0.8 i/s - 1.78x  (± 0.00) slower
+
+    should be faster
+-------------------
+READING
+-------------------
+Warming up --------------------------------------
+                Hash     1.000  i/100ms
+                 Map     1.000  i/100ms
+Calculating -------------------------------------
+                Hash      3.315  (± 0.0%) i/s -     17.000  in   5.216475s
+                 Map      2.595  (± 0.0%) i/s -     13.000  in   5.096789s
+
+Comparison:
+                Hash:        3.3 i/s
+                 Map:        2.6 i/s - 1.28x  (± 0.00) slower
+
+    should be faster
+  In conncurent env
+-------------------
+READING [CONN]
+-------------------
+Warming up --------------------------------------
+                Hash     1.000  i/100ms
+                 Map     1.000  i/100ms
+Calculating -------------------------------------
+                Hash      3.328  (± 0.0%) i/s -     17.000  in   5.228008s
+                 Map      2.027  (± 0.0%) i/s -     10.000  in   5.153291s
+
+Comparison:
+                Hash:        3.3 i/s
+                 Map:        2.0 i/s - 1.64x  (± 0.00) slower
+
+    should be faster
+-------------------
+WRITING [CONN]
+-------------------
+Warming up --------------------------------------
+                Hash     1.000  i/100ms
+                 Map     1.000  i/100ms
+Calculating -------------------------------------
+                Hash      3.050  (± 0.0%) i/s -     16.000  in   5.298692s
+                 Map      1.832  (± 0.0%) i/s -     10.000  in   5.490614s
+
+Comparison:
+                Hash:        3.0 i/s
+                 Map:        1.8 i/s - 1.66x  (± 0.00) slower
+
+    should be faster
+-------
+WRITING/READING/DELETING [CONN]
+-------
+Warming up --------------------------------------
+                Hash     1.000  i/100ms
+                 Map     1.000  i/100ms
+Calculating -------------------------------------
+                Hash      1.505  (± 0.0%) i/s -      8.000  in   5.353670s
+                 Map      0.794  (± 0.0%) i/s -      4.000  in   5.039341s
+
+Comparison:
+                Hash:        1.5 i/s
+                 Map:        0.8 i/s - 1.90x  (± 0.00) slower
+
+    should be faster
+
+Finished in 1 minute 31.59 seconds (files took 0.30828 seconds to load)
+6 examples, 0 failures
+
+Randomized with seed 14862
+
